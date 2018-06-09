@@ -2,117 +2,64 @@
 <html lang="pl-PL">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-compatible" content="IE=edge">
-    <title>MyFirstWeb</title>
-    <!--    Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100i,300,400,400i,600,600i,700,700i" rel="stylesheet">
-<style>
-    
-.body {
-    font: 500 22px / 1em Josefin Sans, Arial, sans-serif;
-    color: #222222;
-    background-color: #ffffff;
-    margin: 0 auto; 
-    }
-    
-.images {
-    letter-spacing: -0.55px;
-}
-    
-h3 {
-font-weight: 600;
-    margin-bottom: 10px;
-}
-
-p {
-    text-align: left;
-    margin-bottom: 50px;
-    font-size: 18px;
-font-weight: 300;
-line-height: 1em;
-letter-spacing: -0.45px;
-}
-
-.flex-container > .images-list{
-    width: 400px;
-    margin: 20px 50px;
-    
-}
-
-.flex-container {
-  display: flex;
-    flex-flow: row wrap;
-  justify-content: space-around;
-    align-items: center;
-    margin: 0 270px;
-}
- @media only screen and (max-width: 1570px){
-     .flex-container { margin: 0 50px; 
-     }
-    }
-    @media only screen and (max-width: 600px){
-     .flex-container { margin: 0 auto; 
-     }
-    }
-    
-/*
-.flex-container > div {
-  margin: 5px;
-  padding: 30px;
-  font-size: 30px;
-}
-*/
-    
-.images-list img {
-    float: left;
-    margin: 10px 20px 50px 0;
-}
-    
-</style>
+    <meta charset="utf-8">
+    <!-- Polskie znaki -->
+    <meta name="description" content="Strona testowa">
+    <!-- opis naszej strony w wyszukiwarce -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- import pliku ze stylami css -->
+    <title> Kalkulator </title>
+    <!-- tytul naszej strony (pasek i wyszukiwarka) -->
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+<!--    bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<!-- JS, Popper.js, and jQuery   -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 </head>
-<body>
 
-<section class="images">
-    <div class="flex-container">
-        <div class="images-list">
-            <img class="images-list img" src="img/person.png" alt="">
-            <h3>Branding &amp; Identity</h3>
-            <p>Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
-            </p>
-        </div>
-        <div class="images-list">
-            <img class="images-list img" src="img/mobile.png" alt="">
-            <h3>Mobile App Development</h3>
-            <p>Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
-            </p>
-        </div>
-        <div class="images-list">
-            <img class="images-list img" src="img/star.png" alt="">
-            <h3>UI/UX</h3>
-            <p>Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
-            </p>
-        </div>
-        <div class="images-list">
-            <img class="images-list img" src="img/window.png" alt="">
-            <h3>Web &amp; Graphic Design</h3>
-            <p>Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
-            </p>
-        </div>
-        <div class="images-list">
-            <img class="images-list img" src="img/video.png" alt="">
-            <h3>Animations</h3>
-            <p>Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
-            </p>
-        </div>
-        <div class="images-list">
-            <img class="images-list img" src="img/camera.png" alt="">
-            <h3>Photography</h3>
-            <p>Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
-            </p>
-        </div>
-    </div>
-</section>
+<body>
+  
+  
+   <div class="container text-center main">
+   <img class="img-fluid" id="calc-img" src="img/calc-img.png" alt="">
+    <h1 class="heading p-4">Kalkulator</h1>
+     <input type="text" class="mb-2 text-right res" id="d" cols="20" rows="1" readonly>
+     <div class="row p-2 font-weight-bold">
+       <div class="col-6 cell "><button class="btn-user" type="button" value="C" onclick='c("")'>C</button></div>
+       <div class="col-3 cell border-left "><button class="btn-user" type="button" value="(" onclick='math("(")'>(</button></div>
+       <div class="col-3 cell border-left "><button class="btn-user" type="button" value=")" onclick='math(")")'>)</button></div>
+     </div>
+     <div class="row p-2 font-weight-bold">
+       <div class="col-3 cell border-right "><button class="btn-user" type="button" value="7" onclick='math("7")'>7</button></div>
+       <div class="col-3 cell "><button class="btn-user" type="button" value="8" onclick='math("8")'>8</button></div>
+       <div class="col-3 cell border-left "><button class="btn-user" type="button" value="9" onclick='math("9")'>9</button></div>
+       <div class="col-3 cell border-left "><button class="btn-user" type="button" value="/" onclick='math("/")'>/</button></div>
+     </div>
+     <div class="row p-2 font-weight-bold">
+       <div class="col-3 cell border-right "><input class="btn-user" type="button" value="4" onclick='math("4")'></div>
+       <div class="col-3 cell "><button class="btn-user" type="button" value="5" onclick='math("5")'>5</button></div>
+       <div class="col-3 cell border-left "><button class="btn-user" type="button" value="6" onclick='math("6")'>6</button></div>
+       <div class="col-3 cell border-left "><button class="btn-user" type="button" value="*" onclick='math("*")'>*</button></div>
+     </div>
+     <div class="row p-2 font-weight-bold">
+       <div class="col-3 cell border-right "><button class="btn-user" type="button" value="1" onclick='math("1")'>1</button></div>
+       <div class="col-3 cell "><input class="btn-user" type="button" value="2" onclick='math("2")'></div>
+       <div class="col-3 cell border-left "><button class="btn-user" type="button" value="3" onclick='math("3")'>3</button></div>
+       <div class="col-3 cell border-left "><button class="btn-user" type="button" value="-" onclick='math("-")'>-</button></div>
+     </div>
+     <div class="row p-2 font-weight-bold pb-3">
+       <div class="col-9 cell "><button class="btn-user" type="button" value="0" onclick='math("0")'>0</button></div>
+       
+       <div class="col-3 cell border-left"><input class="btn-user" type="button" value="+" onclick='math("+")'></div>
+     </div>
+       <div class="text-center mb-3">
+         <input type="button" class=" btn btn-danger btn-lg btn-block" value="=" onclick='e("")'>
+       </div>
+   </div>
+   
+    
 </body>
 </html>
